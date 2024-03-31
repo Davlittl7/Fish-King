@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,22 +20,30 @@ public class PlayerMovement : MonoBehaviour
     //public float bubbleTimer = 0.15f;
     //private float currBubbleTimer;
     //private bool canAttack;
-    //Animator animator;
+    Animator animator;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         //currBubbleTimer = bubbleTimer; 
     }
 
     void FixedUpdate()
     {
-       rb.MovePosition(rb.position + movementInput * movementSpeed * Time.fixedDeltaTime);
+        //Player movement and determining left or right movement animation
+        rb.MovePosition(rb.position + movementInput * movementSpeed * Time.fixedDeltaTime);
+
+        //Checks to see if idle animation is needed
+        if (movementInput.x == 0) animator.SetBool("isIdle", true);
+        else animator.SetBool("isIdle", false);
+        
     }
 
     void OnMove(InputValue value)
     {
         movementInput = value.Get<Vector2>();
+        animator.SetFloat("Horizontal", movementInput.x);
     }
 
     void OnFire()
