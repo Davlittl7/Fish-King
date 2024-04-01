@@ -32,6 +32,7 @@ public class Bullet : MonoBehaviour
     //Deactivates the bubble to save memory
     void DeactivateGameObject()
     {
-        gameObject.SetActive(false);
+        Destroy(gameObject);
     }
+
 }
