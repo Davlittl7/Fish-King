@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 785622c591a8fa34da3bea6367de5542
+guid: ecaeeb86af1fddb4fa6fff7bf0e062cb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -49,11 +49,11 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 546, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: 0
+  spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Fish_Player_Spritesheet_0
+      name: Enemy_Pirahna_Spritesheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d67d384b57cf876429fbfbb68cd8e937
-      internalID: 1815228046
+      spriteID: a8ad10a73c98ce74a9a6d92203d7693e
+      internalID: -417732005
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fish_Player_Spritesheet_1
+      name: Enemy_Pirahna_Spritesheet_1
       rect:
         serializedVersion: 2
         x: 256
@@ -158,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca9f4cc0aa5662048a4ac94bcd0f1d39
-      internalID: 1217047266
+      spriteID: 8ecd51ac1e87b26478a25ee2239e234c
+      internalID: -223926568
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fish_Player_Spritesheet_2
+      name: Enemy_Pirahna_Spritesheet_2
       rect:
         serializedVersion: 2
         x: 512
@@ -179,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f81d22a8bd229dc4b81a54e8f8dab612
-      internalID: -1987310568
+      spriteID: 2ba373c08ffac0048af904b8f24a9023
+      internalID: 762999125
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fish_Player_Spritesheet_3
+      name: Enemy_Pirahna_Spritesheet_3
       rect:
         serializedVersion: 2
         x: 768
@@ -200,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4735a0769b9a67e4fb9a235150986408
-      internalID: 110959819
+      spriteID: 328da4809a78ea74897c50b98699fa25
+      internalID: -1950928802
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fish_Player_Spritesheet_4
+      name: Enemy_Pirahna_Spritesheet_4
       rect:
         serializedVersion: 2
         x: 1024
@@ -221,14 +221,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 20051fd48f203134b8665a1abbca5e87
-      internalID: 1911915014
+      spriteID: e514ddc8c192f05408c440d49ca98857
+      internalID: -717019741
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fish_Player_Spritesheet_5
+      name: Enemy_Pirahna_Spritesheet_5
       rect:
         serializedVersion: 2
         x: 1280
@@ -242,14 +242,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9bb0637a08beb5d479b46ec3aba9baed
-      internalID: -23406076
+      spriteID: dceeb8e677eb0524ba8b2b2c9d5d1047
+      internalID: 1600573328
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fish_Player_Spritesheet_6
+      name: Enemy_Pirahna_Spritesheet_6
       rect:
         serializedVersion: 2
         x: 1536
@@ -263,14 +263,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b7c5458564d44844fb6a9c4ef120f534
-      internalID: 1361317837
+      spriteID: d6e223e939efb4a4aaa1318a68ac9981
+      internalID: 212594078
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fish_Player_Spritesheet_7
+      name: Enemy_Pirahna_Spritesheet_7
       rect:
         serializedVersion: 2
         x: 1792
@@ -284,117 +284,31 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2fca686b323b30d4dbc9d8e78d47a21a
-      internalID: 459158416
+      spriteID: 864a6f2544c12064aa494fe2f87b18f9
+      internalID: 1601805617
       vertices: []
       indices: 
       edges: []
       weights: []
-    outline:
-    - - {x: -986, y: 122}
-      - {x: -986, y: -119}
-      - {x: -978, y: -122}
-      - {x: -822, y: -122}
-      - {x: -798, y: -78}
-      - {x: -798, y: 87}
-      - {x: -829, y: 122}
-    - - {x: -702, y: 122}
-      - {x: -730, y: 110}
-      - {x: -730, y: -69}
-      - {x: -687, y: -122}
-      - {x: -560, y: -122}
-      - {x: -542, y: -92}
-      - {x: -542, y: 109}
-      - {x: -601, y: 122}
-    - - {x: -300, y: -55}
-      - {x: -286, y: -20}
-      - {x: -286, y: 93}
-      - {x: -328, y: 114}
-      - {x: -453, y: 114}
-      - {x: -474, y: 86}
-      - {x: -474, y: -12}
-      - {x: -469, y: -42}
-      - {x: -441, y: -60}
-      - {x: -424, y: -58}
-      - {x: -422, y: -56}
-      - {x: -444, y: -115}
-      - {x: -436, y: -122}
-      - {x: -328, y: -122}
-      - {x: -322, y: -114}
-      - {x: -331, y: -92}
-      - {x: -341, y: -86}
-    - - {x: -30, y: -20}
-      - {x: -30, y: 94}
-      - {x: -72, y: 114}
-      - {x: -197, y: 114}
-      - {x: -218, y: 86}
-      - {x: -218, y: -12}
-      - {x: -213, y: -42}
-      - {x: -185, y: -60}
-      - {x: -168, y: -58}
-      - {x: -166, y: -56}
-      - {x: -188, y: -115}
-      - {x: -180, y: -122}
-      - {x: -72, y: -122}
-      - {x: -66, y: -114}
-      - {x: -75, y: -92}
-      - {x: -44, y: -56}
-    - - {x: 602, y: 114}
-      - {x: 550, y: 105}
-      - {x: 550, y: -55}
-      - {x: 567, y: -122}
-      - {x: 734, y: -122}
-      - {x: 738, y: -108}
-      - {x: 738, y: 114}
-    - - {x: 975, y: 114}
-      - {x: 858, y: 114}
-      - {x: 806, y: 105}
-      - {x: 806, y: -87}
-      - {x: 839, y: -122}
-      - {x: 968, y: -122}
-      - {x: 990, y: -86}
-      - {x: 994, y: -67}
-      - {x: 994, y: 109}
-    - - {x: 71, y: 114}
-      - {x: 45, y: 94}
-      - {x: 38, y: 72}
-      - {x: 38, y: -3}
-      - {x: 50, y: -34}
-      - {x: 56, y: -110}
-      - {x: 70, y: -114}
-      - {x: 220, y: -114}
-      - {x: 226, y: -100}
-      - {x: 226, y: 95}
-      - {x: 166, y: 114}
-    - - {x: 327, y: 114}
-      - {x: 301, y: 94}
-      - {x: 294, y: 72}
-      - {x: 294, y: -3}
-      - {x: 306, y: -34}
-      - {x: 312, y: -110}
-      - {x: 326, y: -114}
-      - {x: 476, y: -114}
-      - {x: 482, y: -100}
-      - {x: 482, y: 95}
-      - {x: 422, y: 114}
+    outline: []
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Fish_Player_Spritesheet_0: 1815228046
-      Fish_Player_Spritesheet_1: 1217047266
-      Fish_Player_Spritesheet_2: -1987310568
-      Fish_Player_Spritesheet_3: 110959819
-      Fish_Player_Spritesheet_4: 1911915014
-      Fish_Player_Spritesheet_5: -23406076
-      Fish_Player_Spritesheet_6: 1361317837
-      Fish_Player_Spritesheet_7: 459158416
+      Enemy_Pirahna_Spritesheet_0: -417732005
+      Enemy_Pirahna_Spritesheet_1: -223926568
+      Enemy_Pirahna_Spritesheet_2: 762999125
+      Enemy_Pirahna_Spritesheet_3: -1950928802
+      Enemy_Pirahna_Spritesheet_4: -717019741
+      Enemy_Pirahna_Spritesheet_5: 1600573328
+      Enemy_Pirahna_Spritesheet_6: 212594078
+      Enemy_Pirahna_Spritesheet_7: 1601805617
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
