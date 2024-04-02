@@ -26,7 +26,7 @@ public class Oyster : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Destroy(gameObject);
-        } else if (collision.gameObject.CompareTag("Wall"))
+        } else if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Bubble"))
         {
             Destroy(gameObject);
         }

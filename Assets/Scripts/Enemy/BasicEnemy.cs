@@ -39,10 +39,13 @@ public class BasicEnemy : MonoBehaviour
     //Makes the enemy always look at the player
     private void RotateTowardsTarget()
     {
-        Vector2 targetDir = target.position - transform.position;
-        float angle = Mathf.Atan2(targetDir.y, targetDir.x) * Mathf.Rad2Deg - 90f;
-        Quaternion q = Quaternion.Euler(new Vector3(0, 0, angle));
-        transform.localRotation = Quaternion.Slerp(transform.localRotation, q, rotateSpeed);
+        if (target != null)
+        {
+            Vector2 targetDir = target.position - transform.position;
+            float angle = Mathf.Atan2(targetDir.y, targetDir.x) * Mathf.Rad2Deg - 90f;
+            Quaternion q = Quaternion.Euler(new Vector3(0, 0, angle));
+            transform.localRotation = Quaternion.Slerp(transform.localRotation, q, rotateSpeed);
+        }
     }
 
     //Determines the player as the target
