@@ -157,6 +157,7 @@ MonoBehaviour:
   movementSpeed: 5
   bubble: {fileID: 7262754780588710329, guid: e4e2b2f525ac2774dbeb46ec38d32f35, type: 3}
   bubbleBlow: {fileID: 6373752353930906898}
+  bubbleForce: 10
 --- !u!50 &8632440732574657516
 Rigidbody2D:
   serializedVersion: 4
@@ -183,7 +184,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!114 &7626228809352268137
 MonoBehaviour:
   m_ObjectHideFlags: 0

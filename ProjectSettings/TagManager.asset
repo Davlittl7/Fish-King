@@ -8,6 +8,7 @@ TagManager:
   - Bubble
   - Oyster
   - Wall
+  - Head
   layers:
   - Default
   - TransparentFX

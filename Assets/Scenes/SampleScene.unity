@@ -412,7 +412,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 3
+  m_Constraints: 7
 --- !u!61 &564974217
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -906,6 +906,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5424613381850795300, guid: 207831c95954da7479176662bd5a57b0, type: 3}
+      propertyPath: rotateSpeed
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5917696756433616630, guid: 207831c95954da7479176662bd5a57b0, type: 3}
+      propertyPath: m_TagString
+      value: Head
+      objectReference: {fileID: 0}
+    - target: {fileID: 6373752353930906898, guid: 207831c95954da7479176662bd5a57b0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.37
+      objectReference: {fileID: 0}
     - target: {fileID: 9211733661643075671, guid: 207831c95954da7479176662bd5a57b0, type: 3}
       propertyPath: m_Name
       value: Fish_Player
@@ -970,6 +982,14 @@ PrefabInstance:
     - target: {fileID: 918772043074910814, guid: 2d6cd97dd11d27c46bedba264dace7c8, type: 3}
       propertyPath: m_Name
       value: Piranha
+      objectReference: {fileID: 0}
+    - target: {fileID: 918772043074910814, guid: 2d6cd97dd11d27c46bedba264dace7c8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7235589067537611719, guid: 2d6cd97dd11d27c46bedba264dace7c8, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

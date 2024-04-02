@@ -47,17 +47,19 @@ public class ShootingEnemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-
-        float distance = Vector2.Distance(transform.position, player.transform.position);
-
-        if(distance < 10)
+        if (player != null)
         {
-            bubbleTimer += Time.deltaTime;
+            float distance = Vector2.Distance(transform.position, player.transform.position);
 
-            if (bubbleTimer > 2)
+            if (distance < 10)
             {
-                bubbleTimer = 0;
-                Move();
+                bubbleTimer += Time.deltaTime;
+
+                if (bubbleTimer > 2)
+                {
+                    bubbleTimer = 0;
+                    Move();
+                }
             }
         }
     }
@@ -69,10 +71,13 @@ public class ShootingEnemy : MonoBehaviour
 
     private void RotateTowardsTarget()
     {
-        Vector2 targetDir = target.position - transform.position;
-        float angle = Mathf.Atan2(targetDir.y, targetDir.x) * Mathf.Rad2Deg - 90f;
-        Quaternion q = Quaternion.Euler(new Vector3(0, 0, angle));
-        transform.localRotation = Quaternion.Slerp(transform.localRotation, q, rotateSpeed);
+        if (target != null)
+        {
+            Vector2 targetDir = target.position - transform.position;
+            float angle = Mathf.Atan2(targetDir.y, targetDir.x) * Mathf.Rad2Deg - 90f;
+            Quaternion q = Quaternion.Euler(new Vector3(0, 0, angle));
+            transform.localRotation = Quaternion.Slerp(transform.localRotation, q, rotateSpeed);
+        }
     }
 
     private void GetTarget()
