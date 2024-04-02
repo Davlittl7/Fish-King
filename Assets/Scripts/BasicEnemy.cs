@@ -36,6 +36,7 @@ public class BasicEnemy : MonoBehaviour
         rb.velocity = transform.up * speed;
     }
 
+    //Makes the enemy always look at the player
     private void RotateTowardsTarget()
     {
         Vector2 targetDir = target.position - transform.position;
@@ -44,6 +45,7 @@ public class BasicEnemy : MonoBehaviour
         transform.localRotation = Quaternion.Slerp(transform.localRotation, q, rotateSpeed);
     }
 
+    //Determines the player as the target
     private void GetTarget()
     {
         if(GameObject.FindGameObjectWithTag("Player"))
@@ -53,6 +55,7 @@ public class BasicEnemy : MonoBehaviour
        
     }
 
+    //Destroys Player if they are ran into, destroys enemy if they are shot
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Player"))
