@@ -5,25 +5,24 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using static UnityEngine.GraphicsBuffer;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float movementSpeed = 5f;
+    [SerializeField]
+    private float movementSpeed;
 
     Vector2 movementInput;
-    Vector2 mousePos;
-    Vector2 smoothMove;
-    Vector2 smVelocity;
 
     private Rigidbody2D rb;
 
     public GameObject bubble;
-    public GameObject player;
 
     public Transform bubbleBlow;
     private Transform playerHead;
 
-    public float rotateSpeed = 0.5f;
+    [SerializeField]
+    public float rotateSpeed;
 
     public float bubbleForce = 10f;
 
@@ -31,7 +30,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
         playerHead = GameObject.FindGameObjectWithTag("Head").transform;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -44,11 +42,24 @@ public class PlayerMovement : MonoBehaviour
 
     void Movement()
     {
-        //Player movement and determining left or right movement animation
-        rb.MovePosition(rb.position + movementInput * movementSpeed * Time.fixedDeltaTime);
-        float angle = Mathf.Atan2(movementInput.y, movementInput.x) * Mathf.Rad2Deg - 90f;
-        Quaternion q = Quaternion.Euler(new Vector3(0, 0, angle));
-        rb.transform.rotation = Quaternion.Slerp(transform.localRotation, q, rotateSpeed);
+        //Mapping x and y inputs to two float variables
+        float horizontal = movementInput.x;
+        float vertical = movementInput.y;
+
+        //Connects and normalizes movements
+        Vector2 movementDirection = new Vector2(horizontal, vertical);
+        float inputMagnitude = Mathf.Clamp01(movementDirection.magnitude);
+        movementDirection.Normalize();
+
+        //Causes the movement
+        transform.Translate(movementDirection * movementSpeed * inputMagnitude * Time.deltaTime, Space.World);
+
+        //Rotation
+        if(movementDirection != Vector2.zero)
+        {
+            Quaternion toRotation = Quaternion.LookRotation(Vector3.forward, movementDirection);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotateSpeed * Time.deltaTime);
+        }
 
         //Checks to see if idle animation is needed
         if (movementInput == Vector2.zero) animator.SetBool("isIdle", true);
@@ -67,6 +78,6 @@ public class PlayerMovement : MonoBehaviour
         GameObject bubbles = Instantiate(bubble, bubbleBlow.position, bubbleBlow.rotation);
         Rigidbody2D rb = bubbles.GetComponent<Rigidbody2D>();
         rb.AddForce(bubbleBlow.up * bubbleForce, ForceMode2D.Impulse);
-        
     }
+
 }
