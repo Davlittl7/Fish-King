@@ -11,22 +11,20 @@ public class PlayerMovement : MonoBehaviour
 
     Vector2 movementInput;
 
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
 
     public GameObject bubble;
 
     public Transform bubbleBlow;
 
-    //public float bubbleTimer = 0.15f;
-    //private float currBubbleTimer;
-    //private bool canAttack;
+    public float bubbleForce = 10f;
+
     Animator animator;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        //currBubbleTimer = bubbleTimer; 
     }
 
     void FixedUpdate()
@@ -36,10 +34,8 @@ public class PlayerMovement : MonoBehaviour
 
         //Checks to see if idle animation is needed
         if (movementInput.x == 0) animator.SetBool("isIdle", true);
-        else animator.SetBool("isIdle", false);
-        
+        else animator.SetBool("isIdle", false);    
     }
-
     void OnMove(InputValue value)
     {
         movementInput = value.Get<Vector2>();
@@ -48,19 +44,11 @@ public class PlayerMovement : MonoBehaviour
 
     void OnFire()
     {
-        //bubbleTimer += Time.deltaTime;
-        /*if(bubbleTimer > currBubbleTimer)
-        {
-            canAttack = true;
-        }
-        if(canAttack)
-        {
-            canAttack = false;
-            bubbleTimer = 0f;
-            Instantiate(bubble, bubbleBlow.position, Quaternion.identity);
-        }*/
-        Instantiate(bubble, bubbleBlow.position, Quaternion.identity);
 
+        GameObject bubbles = Instantiate(bubble, bubbleBlow.position, bubbleBlow.rotation);
+        Rigidbody2D rb = bubbles.GetComponent<Rigidbody2D>();
+        rb.AddForce(bubbleBlow.up * bubbleForce, ForceMode2D.Impulse);
+        
     }
 
 }

@@ -163,3 +163,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   deactivateT: 3
+  player: {fileID: 9211733661643075671, guid: 207831c95954da7479176662bd5a57b0, type: 3}
