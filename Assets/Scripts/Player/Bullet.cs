@@ -4,29 +4,16 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float speed = 10f;
     public float deactivateT = 3f;
+    //public GameObject player;
+    private Rigidbody2D rb;
 
     // Start is called before the first frame update
     //Invokes deactivation function
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         Invoke("DeactivateGameObject", deactivateT);
-    }
-
-    // Update is called once per frame
-    //Calls for the bubble to move across the screen
-    void Update()
-    {
-        Move();
-    }
-
-    //Moves the bubble along the y-axis
-    void Move()
-    {
-        Vector2 temp = transform.position;
-        temp.y += speed * Time.deltaTime;
-        transform.position = temp;
     }
     
     //Deactivates the bubble to save memory
