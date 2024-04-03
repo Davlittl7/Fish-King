@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5646495674049335123}
   m_Layer: 0
   m_Name: Enemy_Pearl
-  m_TagString: Oyster
+  m_TagString: Pearl
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -161,5 +161,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9226a0ef42e170442af97e8747742ead, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   force: 5
