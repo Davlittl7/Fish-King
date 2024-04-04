@@ -63,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
 
         //Checks to see if idle animation is needed
         if (movementInput == Vector2.zero) animator.SetBool("isIdle", true);
-         else animator.SetBool("isIdle", false);
+        else animator.SetBool("isIdle", false);
     }
 
     void OnMove(InputValue value)
