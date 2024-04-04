@@ -14,8 +14,6 @@ public class ShootingEnemy : MonoBehaviour
 
     private Rigidbody2D rb;
 
-    public float deactivateT = 3f;
-
     public GameObject bubble;
     private GameObject player;
 
@@ -26,7 +24,6 @@ public class ShootingEnemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("DeactivateGameObject", deactivateT);
         player = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody2D>();
     }
@@ -87,12 +84,6 @@ public class ShootingEnemy : MonoBehaviour
             target = GameObject.FindGameObjectWithTag("Player").transform;
         }
 
-    }
-
-    //Deactivates the pearl to save memory
-    void DeactivateGameObject()
-    {
-        Destroy(GameObject.FindGameObjectWithTag("Pearl"));
     }
 
     //Destroys Player if they are ran into, destroys enemy if they are shot
