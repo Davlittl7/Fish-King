@@ -18,7 +18,7 @@ public class Pearl : MonoBehaviour
         rb.velocity = new Vector2(direction.x, direction.y).normalized * force;
     }
 
-    //If player is hit by the oyster they are destoryed
+    //If player is hit by the pearl they are destoryed
     //Gets rid of oyster if they collide with a wall
     private void OnCollisionEnter2D(Collision2D collision)
     {
