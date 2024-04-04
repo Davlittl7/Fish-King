@@ -89,10 +89,10 @@ public class ShootingEnemy : MonoBehaviour
 
     }
 
-    //Deactivates the oyster to save memory
+    //Deactivates the pearl to save memory
     void DeactivateGameObject()
     {
-        Destroy(GameObject.FindGameObjectWithTag("Oyster"));
+        Destroy(GameObject.FindGameObjectWithTag("Pearl"));
     }
 
     //Destroys Player if they are ran into, destroys enemy if they are shot
