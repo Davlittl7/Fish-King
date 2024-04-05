@@ -40,7 +40,9 @@ public class PlayerMovement : MonoBehaviour
    
     public float bubbleForce = 10f;
 
+
     Animator animator;
+
 
     private void Awake()
     {

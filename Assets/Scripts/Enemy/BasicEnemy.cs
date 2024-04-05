@@ -63,12 +63,29 @@ public class BasicEnemy : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            Destroy(collision.gameObject);
-            target = null;
+            //Plays animation of losing a bubble and destroys player if health is now 0
+            --Health.health;
+            Health.bubbles[Health.health].GetComponent<Animator>().enabled = true;
+            if (Health.health == 0)
+            {
+                Destroy(collision.gameObject);
+                target = null;
+            }
+            StartCoroutine(playerIsHit());
+
         } else if (collision.gameObject.CompareTag("Bubble"))
         {
             Destroy(gameObject);
             Destroy(collision.gameObject);
         }
+    }
+
+
+    IEnumerator playerIsHit()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+        yield return new WaitForSeconds(0.2f);
+        player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
     }
 }
