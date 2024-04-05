@@ -33,11 +33,23 @@ public class Pearl : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            Destroy(collision.gameObject);
+            //Plays animation of losing a bubble and destroys player if health is now 0
+            --Health.health;
+            Health.bubbles[Health.health].GetComponent<Animator>().enabled = true;
+            if (Health.health == 0) Destroy(collision.gameObject);
             Destroy(gameObject);
+            StartCoroutine(playerIsHit());
         } else if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Bubble"))
         {
             Destroy(gameObject);
         }
+    }
+
+    IEnumerator playerIsHit()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+        yield return new WaitForSeconds(0.2f);
+        player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
     }
 }

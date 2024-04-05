@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6373752353930906898}
   m_Layer: 0
   m_Name: Bubble
-  m_TagString: Untagged
+  m_TagString: Head
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5917696756433616630}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 1.24, z: 0}
+  m_LocalPosition: {x: -0, y: 1.37, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 7229778136087017116}
   - component: {fileID: 8538105151983446017}
   - component: {fileID: 5424613381850795300}
+  - component: {fileID: 1487453089625728307}
   - component: {fileID: 8632440732574657516}
   - component: {fileID: 7626228809352268137}
   - component: {fileID: 4320237289945909616}
@@ -67,7 +68,7 @@ Transform:
   m_Children:
   - {fileID: 6373752353930906898}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7229778136087017116
 SpriteRenderer:
@@ -157,7 +158,20 @@ MonoBehaviour:
   movementSpeed: 5
   bubble: {fileID: 7262754780588710329, guid: e4e2b2f525ac2774dbeb46ec38d32f35, type: 3}
   bubbleBlow: {fileID: 6373752353930906898}
+  rotateSpeed: 480
   bubbleForce: 10
+--- !u!114 &1487453089625728307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9211733661643075671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c298a5775c57a143a43d94ba81f62e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &8632440732574657516
 Rigidbody2D:
   serializedVersion: 4
