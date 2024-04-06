@@ -65,7 +65,14 @@ public class BasicEnemy : MonoBehaviour
         {
             //Plays animation of losing a bubble and destroys player if health is now 0
             --Health.health;
-            Health.bubbles[Health.health].GetComponent<Animator>().enabled = true;
+
+            //Checks to see if animator is already enabled and uses different ways to run anim if it is
+            if (Health.bubbles[Health.health].GetComponent<Animator>().
+                isActiveAndEnabled == true)
+                Health.bubbles[Health.health].GetComponent<Animator>().SetBool("isHealthLossed", true);
+            else
+                Health.bubbles[Health.health].GetComponent<Animator>().enabled = true;
+
             if (Health.health == 0)
             {
                 Destroy(collision.gameObject);
@@ -83,9 +90,15 @@ public class BasicEnemy : MonoBehaviour
 
     IEnumerator playerIsHit()
     {
+        //Make sure player's movement isn't affected by enemy collison
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
         yield return new WaitForSeconds(0.2f);
         player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+
+        //Show health lost animation 
+        yield return new WaitForSeconds(0.833f);
+        Health.bubbles[Health.health].GetComponent<Animator>().SetBool("isHealthLossed", false);
+        Health.bubbles[Health.health].GetComponent<Animator>().enabled = false;
     }
 }
