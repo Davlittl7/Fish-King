@@ -10,6 +10,7 @@ TagManager:
   - Head
   - Pearl
   - Health
+  - HealthPickup
   layers:
   - Default
   - TransparentFX
