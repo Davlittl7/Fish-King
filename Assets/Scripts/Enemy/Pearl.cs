@@ -45,8 +45,6 @@ public class Pearl : MonoBehaviour
 
             if (Health.health == 0) Destroy(collision.gameObject);
             Destroy(gameObject);
-
-            StartCoroutine(playerIsHit());
         }
         else if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Bubble"))
         {
