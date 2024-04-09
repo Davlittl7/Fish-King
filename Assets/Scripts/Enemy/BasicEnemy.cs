@@ -71,21 +71,11 @@ public class BasicEnemy : MonoBehaviour
                 Destroy(collision.gameObject);
                 target = null;
             }
-            StartCoroutine(playerIsHit());
 
         } else if (collision.gameObject.CompareTag("Bubble"))
         {
             Destroy(gameObject);
             Destroy(collision.gameObject);
         }
-    }
-
-
-    IEnumerator playerIsHit()
-    {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-        yield return new WaitForSeconds(0.2f);
-        player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
     }
 }
