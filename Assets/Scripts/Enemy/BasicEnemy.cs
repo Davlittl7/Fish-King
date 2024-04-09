@@ -78,7 +78,6 @@ public class BasicEnemy : MonoBehaviour
                 Destroy(collision.gameObject);
                 target = null;
             }
-            StartCoroutine(playerIsHit());
 
         } else if (collision.gameObject.CompareTag("Bubble"))
         {
@@ -86,17 +85,9 @@ public class BasicEnemy : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
-
-
+    
     IEnumerator playerIsHit()
     {
-        //Make sure player's movement isn't affected by enemy collison
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-        yield return new WaitForSeconds(0.2f);
-        player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
-
-        //Show health lost animation 
         yield return new WaitForSeconds(0.833f);
         Health.bubbles[Health.health].GetComponent<Animator>().SetBool("isHealthLossed", false);
         Health.bubbles[Health.health].GetComponent<Animator>().enabled = false;
